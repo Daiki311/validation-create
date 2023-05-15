@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=, initial-scale=1.0">
-  <link rel="stylesheet" href="style,css">
-  <link rel="stylesheet" href="index.js">
+  <link href="style.css" rel="stylesheet">
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <div class="sign_up_vibes3">事業形態</div>
                 <div class="sign_up_vibes4">
                   <label class="sign_up_vibes5">
-                    <input id="company_org_code2" type="radio" value="2" checked data-gtm-form-interact-id="1">
+                    <input id="company_org_code2" type="radio" name="company[org_code]" value="2" checked data-gtm-form-interact-id="1">
                     <div class="sign_up_vibes6">
                       <b>個人事業主</b>
                       <span class="sign_up_vibes7">(副業の確定申告も含む)</span>
@@ -32,7 +33,7 @@
                 </div>
                 <div class="sign_up_vibes8">
                   <label class="sign_up_vibes9">
-                    <input id="company_org_code_1" type="radio" value="1" data-gtm-form-interact-id="0">
+                    <input id="company_org_code_1" type="radio" name="company[org_code]" value="1" data-gtm-form-interact-id="0">
                     <div class="sign_up_vibes10">
                       <b>法人</b>
                       <span class="sign_up_vibes11">(株式会社/合同会社/NPOなど)</span>
@@ -47,7 +48,7 @@
                   </span>
                 </span>
                 <span class="vb-textField_wrapper vb-textField--widthFull">
-                  <input id="comany_display_name" type="text" name="company{dispalay_name}" maxlength="255" aria-label="事業所名(社名)" autocomplete="off" class="vb-textField--widthFull" value>
+                  <input id="company_display_name" type="text" name="company{dispalay_name}" maxlength="255" aria-label="事業所名(社名)" autocomplete="off" class="vb-textField--widthFull" value>
                 </span>
               </div>
               <div class="sign_up_vibes14">
@@ -92,42 +93,68 @@
               <div class="sign_up_vibes21">
                 <span class="vb-formControlLabel">
                   <span class="vb-formControlLabel_text">
-                    <div class="sign_up_vibes21">メールアドレス</div>
+                    <div class="sign_up_vibes22">メールアドレス</div>
                   </span>
                 </span>
                 <span class="vb-textField_wrapper vb-textField--widthFull">
                   <input id="user_email" type="email" name="user{email}" required maxlength="255" aria-label="メールアドレス" aria-required="true" autocomplete="off" class="vb-textField--widthFull" value>
                 </span>
               </div>
-              <div class="sign_up_vibes22">
+              <div class="sign_up_vibes23">
                 <span class="vb-formControlLabel">
                   <span class="vb-formControlLabel_text">
-                    <div class="sign_up_vibes23">電話番号</div>
+                    <div class="sign_up_vibes24">電話番号</div>
                   </span>
                 </span>
                 <div>
                   <span class="vb-textField_wrapper">
-                    <input id="company_phonel_attributes_a" type="text" name="company[phonel_attributes][a]" maxlength="5" aria-label="電話番号" class="vb-textField vb-textField--widthXSmall" value>
+                    <input id="company_phonel_attributes_a" type="text" name="company[phonel_attributes][a]" maxlength="5" aria-label="電話番号" class="vb-textField vb-textField--widthXSmall phone_number1" value>
                   </span>
-                  <span class="sign_up_vibes24">-</span>
+                  <span class="sign_up_vibes25">-</span>
                   <span class="vb-textField_wrapper">
-                    <input id="company_phonel_attributes_b" type="text" name="company[phonel_attributes][b]" maxlength=""
+                    <input id="company_phonel_attributes_b" type="text" name="company[phonel_attributes][b]" maxlength="5" aria-label="電話番号"
+                    class="vb-textField vb-textField--widthXSmall  phone_number2" value>
+                  </span>
+                  <span class="sign_up_vibes26">-</span>
+                  <span class="vb-textField_wrapper">
+                  <input id="company_phonel_attributes_c" type="text" name="company[phonel_attributes][c]" maxlength="5" aria-label="電話番号"
+                  class="vb-textField vb-textField--widthXSmall phone_number3" value>
                   </span>
                 </div>
-
-
-
-
-
               </div>
-                    <input type="email">
-                    <b>パスワード</b>
-                    <input type="password">
-                    <input type="password">
-
+              <div class="sign_up_vibes27">
+                <span class="vb-formControlLabel">
+                  <span class="vb-formControlLabel_text">
+                    <div class="sign_up_vibes28">パスワード</div>
+                  </span>
+                </span>
+                <span class="vb-textField_wrapper vb-textField--widthFull">
+                  <input id="user_password" type="password" name="user[password]" placeholder="8文字以上" required="" aria-label="パスワード" aria-required="true" autocomplete="off" class="vb-textField vb-textField--widthFull" value>
+                </span>
+                <div id="password-strength-field" class="password-strength-field"></div>
+                <span class="vb-textField_wrapper vb-textField_wrapper--widthFull">
+                  <input id="user_password_confirmation" type="password" name="user[password_confirmation]" placeholder="もう一度入力してください" required="" aria-label="パスワード" aria-required="true" autocomplete="off" class="vb-textField vb-textField--widthFull" value>
+                </span>
               </div>
             </div>
+            <div class="sign_up_vibes29">freeeに登録することで、以下に同意したものとみなします。</div>
+            <div class="sign_up_vibes30">
+              <span class="vb-textButton vb-textButton--small">
+                <a class="vb-textButton_link" href="https://www.freee.co.jp/terms" target="_blank">利用規約</a>
+              </span>
+              、
+              <span class="vb-textButton vb-textButton--small">
+                <a class="vb-textButton_link" href="https://www.freee.co.jp/privacy policy" target="_blank">プライバシーポリシ-</a>
+              </span>
+              、
+              <span class="vb-textButton vb-textButton--small">
+                <a class="vb-textButton_link" href="https://corp.freee.co.jp/api/" target="_blank">電子決済代行業に係る表示</a>
+              </span>
+            </div>
+            <input class="btn btn-primary" id="submit-btn" type="submit" disabled value="freeeを始める">
           </section>
+              </div>
+            </div>
         </div>
       </div>
     </div>
